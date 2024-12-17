@@ -1,12 +1,10 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\MailController;
 use App\Http\Controllers\NotificationController;
 
-Route::get('/', function () {
-    return view('index');
-});
-
-Route::post('/send-email', [NotificationController::class, 'sendEmail']);
+Route::post('/send-notification', [NotificationController::class, 'sendNotification']);
+Route::get('/send-test-email', [NotificationController::class, 'sendTestEmail']);
 
 
